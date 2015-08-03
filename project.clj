@@ -4,4 +4,4 @@
   :license {:name "Apache License Version 2.0"
             :url "http://www.apache.org/licenses/LICENSE-2.0"}
   :eval-in-leiningen true
-  :dependencies [[appcanary/crustacean "0.1.1-SNAPSHOT"]])
+  :dependencies [[appcanary/crustacean "0.1.3-SNAPSHOT"]])
