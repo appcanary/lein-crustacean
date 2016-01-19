@@ -5,11 +5,10 @@
 (defn migrate
   "Migrate a namespace"
   [project & args]
-  (let [project (merge-profiles project [{:dependencies '[[appcanary/crustacean "0.1.0-SNAPSHOT"]]}])]
+  (let [project (merge-profiles project [{:dependencies '[[appcanary/crustacean "0.1.7-SNAPSHOT"]]}])]
     (eval-in-project project
                      `(doseq [entity# ~(mapv symbol args)]
                        (println "Migrating " (:name entity#))
-                       (crustacean.migrations/write-migrations entity#)
-                       (println "Writing" (:migration-file entity#))
+                       (crustacean.migrations/new-migrations entity#)
                        (println "Done."))
                      '(require 'crustacean.migrations))))
